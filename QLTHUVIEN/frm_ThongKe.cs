@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using QLTHUVIEN.LOP;
-
+using BusinessLogic;
+using DataAccess;
 namespace QLTHUVIEN
 {
     public partial class frm_ThongKe : Form

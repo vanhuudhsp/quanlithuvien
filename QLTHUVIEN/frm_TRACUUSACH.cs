@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using QLTHUVIEN.LOP;
+using BusinessLogic;
 using System.Collections;
 namespace QLTHUVIEN
 {

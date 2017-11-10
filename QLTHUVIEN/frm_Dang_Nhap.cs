@@ -9,7 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data;
 using System.Data.SqlClient;
-
+using BusinessLogic;
+using DataAccess;
+using System.Configuration;
+using System.Data.SqlClient;
 namespace QLTHUVIEN
 {
     public partial class frm_Dang_Nhap : Form
@@ -26,39 +29,38 @@ namespace QLTHUVIEN
 
         private void frm_Dang_Nhap_Load(object sender, EventArgs e)
         {
-            txtServerName.Text = "localhost";
-            cb_Authentication.SelectedIndex = 0;
+            
         }
 
-        private void cb_Authentication_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            bool hide = true;
-            if (cb_Authentication.SelectedIndex == 0)
-                hide = false;
-            txtUserName.Enabled = hide;
-            txtPassword.Enabled = hide;
-        }
-
+        
         private void bt_Dang_Nhap_Click(object sender, EventArgs e)
         {
-            if (cb_Authentication.SelectedIndex == 0)
-                LOP.XL_BANG.Chuoi_lien_ket = "Data Source="+ txtServerName.Text  + 
-                                             ";Initial Catalog=QLTHUVIEN;Integrated Security=True";
-            else
-                LOP.XL_BANG.Chuoi_lien_ket = "Data Source=" + txtServerName.Text + ";Initial Catalog=QLTHUVIEN;User ID="+ 
-                                             txtUserName.Text + ";Password="+txtPassword.Text ;
-            SqlConnection cnn = new SqlConnection(LOP.XL_BANG.Chuoi_lien_ket);
+            XL_BANG.Chuoi_lien_ket = "Data Source=.;Initial Catalog=QLTHUVIEN;Integrated Security=True";
             try
             {
-                cnn.Open();
-                MessageBox.Show("Kết nối thành công!");
-                cnn.Close();
-                this.Close();
+                XL_TAIKHOAN tk = new XL_TAIKHOAN("select * from TAIKHOAN where TenTK ='" + txtUserName.Text
+                + "' and MatKhau ='" + txtPassword.Text + "'");
+                if(tk.Rows.Count>0)
+                {
+                    frm_Main f_Main = new frm_Main();
+                    f_Main.StartPosition = FormStartPosition.CenterParent;
+                    f_Main.ShowDialog(this);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Đăng nhập sai UserName và Password!!!");
+                }
             }
-            catch(Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
-            }
+            } 
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

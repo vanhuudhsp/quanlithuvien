@@ -97,7 +97,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin sách";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btKhong_ghi
             // 
@@ -119,7 +118,6 @@
             this.btGhi.TabIndex = 9;
             this.btGhi.Text = "Ghi";
             this.btGhi.UseVisualStyleBackColor = true;
-            this.btGhi.Click += new System.EventHandler(this.btGhi_Click);
             // 
             // groupBox3
             // 
@@ -141,7 +139,6 @@
             this.btSua_sach.TabIndex = 2;
             this.btSua_sach.Text = "Sửa sách";
             this.btSua_sach.UseVisualStyleBackColor = true;
-            this.btSua_sach.Click += new System.EventHandler(this.btSua_sach_Click);
             // 
             // btHuy_sach
             // 
@@ -152,7 +149,6 @@
             this.btHuy_sach.TabIndex = 1;
             this.btHuy_sach.Text = "Hủy sách";
             this.btHuy_sach.UseVisualStyleBackColor = true;
-            this.btHuy_sach.Click += new System.EventHandler(this.btHuy_sach_Click);
             // 
             // btNhap_sach
             // 
@@ -319,8 +315,6 @@
             this.dgvSACH.ReadOnly = true;
             this.dgvSACH.Size = new System.Drawing.Size(897, 258);
             this.dgvSACH.TabIndex = 0;
-            this.dgvSACH.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvSACH_DataBindingComplete);
-            this.dgvSACH.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvSACH_DefaultValuesNeeded);
             // 
             // STT
             // 

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QLTHUVIEN.LOP;
+using BusinessLogic;
 using System.Data.SqlClient;
 namespace QLTHUVIEN
 {
@@ -71,59 +71,20 @@ namespace QLTHUVIEN
             btKhong_ghi.Enabled = capnhat;
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btNhap_sach_Click(object sender, EventArgs e)
         {
             An_hien_nut_lenh(true);
             DS_SACH.AddNew();
         }
-
-        private void btGhi_Click(object sender, EventArgs e)
-        {
-
-            //Phat sinh ma sach
-            SqlConnection cnn = new SqlConnection(XL_BANG.Chuoi_lien_ket);
-            cnn.Open();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = cnn;
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.CommandText = "Phat_sinh_ma_sach";
-            cmd.Parameters.Add("MaTL", System.Data.SqlDbType.VarChar, 2);
-            cmd.Parameters["MaTL"].Value = cbMaTL.SelectedValue;
-            cmd.Parameters.Add("MaSach", System.Data.SqlDbType.VarChar, 6);
-            cmd.Parameters["MaSach"].Direction = System.Data.ParameterDirection.ReturnValue;
-            cmd.ExecuteScalar();
-
-            //
-            DataRowView dr = (DataRowView)DS_SACH.Current;
-            dr["MaSach"] = cmd.Parameters["MaSach"].Value.ToString();
-            txtMaSach.Text = cmd.Parameters["MaSach"].Value.ToString();
-            cnn.Close();
-            //
-            try
-            {
-                DS_SACH.EndCurrentEdit();
-                Bang_SACH.Ghi();
-                An_hien_nut_lenh(false);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void btHuy_sach_Click(object sender, EventArgs e)
+        
+        private void btnXoa_Click(object sender, EventArgs e)
         {
             DS_SACH.RemoveAt(DS_SACH.Position);
             if (!Bang_SACH.Ghi())
                 MessageBox.Show("Xóa thất bại!");
         }
 
-        private void btSua_sach_Click(object sender, EventArgs e)
+        private void btnSua_Click(object sender, EventArgs e)
         {
             An_hien_nut_lenh(true);
            
@@ -137,18 +98,6 @@ namespace QLTHUVIEN
             
         }
 
-        private void dgvSACH_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
-        {
-            dgvSACH.Rows[e.Row.Index].Cells["STT"].Value = e.Row.Index + 1;
-        }
-
-        private void dgvSACH_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            foreach (DataGridViewRow r in dgvSACH.Rows)
-            {
-                r.Cells["STT"].Value = r.Index + 1;
-            }
-        }
-
+        
     }
 }

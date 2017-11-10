@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QLTHUVIEN</RootNamespace>
     <AssemblyName>QLTHUVIEN</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -41,6 +42,7 @@
     </Reference>
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Design" />
@@ -67,12 +69,6 @@
     <Compile Include="frm_MUONSACH.Designer.cs">
       <DependentUpon>frm_MUONSACH.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_NHAPSACH.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_NHAPSACH.Designer.cs">
-      <DependentUpon>frm_NHAPSACH.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_BANDOC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +80,12 @@
     </Compile>
     <Compile Include="frm_Dang_Nhap.Designer.cs">
       <DependentUpon>frm_Dang_Nhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_NHAPSACH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_NHAPSACH.designer.cs">
+      <DependentUpon>frm_NHAPSACH.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_ThongKe.cs">
       <SubType>Form</SubType>
@@ -97,29 +99,11 @@
     <Compile Include="frm_TRACUUSACH.Designer.cs">
       <DependentUpon>frm_TRACUUSACH.cs</DependentUpon>
     </Compile>
-    <Compile Include="LOP\XL_BANDOC.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="LOP\XL_BANG.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="LOP\XL_MUONSACH.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="LOP\XL_NHAXUATBAN.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="LOP\XL_SACH.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="LOP\XL_THELOAI.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Main.cs">
+    <Compile Include="frm_Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
+    <Compile Include="frm_Main.Designer.cs">
+      <DependentUpon>frm_Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -132,14 +116,14 @@
     <EmbeddedResource Include="frm_MUONSACH.resx">
       <DependentUpon>frm_MUONSACH.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_NHAPSACH.resx">
-      <DependentUpon>frm_NHAPSACH.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_BANDOC.resx">
       <DependentUpon>frm_BANDOC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Dang_Nhap.resx">
       <DependentUpon>frm_Dang_Nhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_NHAPSACH.resx">
+      <DependentUpon>frm_NHAPSACH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_ThongKe.resx">
       <DependentUpon>frm_ThongKe.cs</DependentUpon>
@@ -147,8 +131,8 @@
     <EmbeddedResource Include="frm_TRACUUSACH.resx">
       <DependentUpon>frm_TRACUUSACH.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
+    <EmbeddedResource Include="frm_Main.resx">
+      <DependentUpon>frm_Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -224,6 +208,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Hinh\6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CSDL\QLTHUVIEN.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
+      <Project>{d653a506-18c8-4843-9398-379e07c37eef}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{36acd172-9ee6-455e-8f5d-ebc8628e5ad4}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

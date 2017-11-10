@@ -14,9 +14,9 @@ using DevComponents.DotNetBar.Controls;
 
 namespace QLTHUVIEN
 {
-    public partial class Main : Form
+    public partial class frm_Main : Form
     {
-        public Main()
+        public frm_Main()
         {
             InitializeComponent();
         }
@@ -49,10 +49,6 @@ namespace QLTHUVIEN
         private void Main_Load(object sender, EventArgs e)
         {
             ribbonBar1.Dock = DockStyle.Top;
-            frm_Dang_Nhap f_DANGNHAP = new frm_Dang_Nhap();
-            f_DANGNHAP.StartPosition = FormStartPosition.CenterParent;
-            f_DANGNHAP.ShowDialog(this);
-           
         }
 
         private void bt_Thong_Tin_Doc_Gia_Click(object sender, EventArgs e)

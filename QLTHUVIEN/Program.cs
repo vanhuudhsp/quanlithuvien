@@ -16,7 +16,7 @@ namespace QLTHUVIEN
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new frm_Dang_Nhap());
         }
     }
 }

@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data;
 using System.Data.SqlClient;
-using QLTHUVIEN.LOP;
-
+using BusinessLogic;
+using DataAccess;
 namespace QLTHUVIEN
 {
     public partial class frm_BANDOC : Form
@@ -26,7 +26,7 @@ namespace QLTHUVIEN
         BindingManagerBase DS_BANDOC;
         private void frm_BANDOC_Load(object sender, EventArgs e)
         {
-            Bang_BANDOC = new LOP.XL_BANDOC();
+            Bang_BANDOC = new XL_BANDOC();
             Bang_BANDOC.Columns["MaThe"].ReadOnly = true;
             
             dgv_BANDOC.DataSource = Bang_BANDOC;
@@ -74,7 +74,7 @@ namespace QLTHUVIEN
             DS_BANDOC.AddNew();
 
             //Phat sinh ma the
-            SqlConnection cnn = new SqlConnection(LOP.XL_BANG.Chuoi_lien_ket);
+            SqlConnection cnn = new SqlConnection(XL_BANG.Chuoi_lien_ket);
             cnn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = cnn;
