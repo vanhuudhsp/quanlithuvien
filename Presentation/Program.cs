@@ -8,7 +8,7 @@ namespace QLTHUVIEN
 {
     static class Program
     {
-        /// <summary>
+        /// <summary>sfsfs
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
