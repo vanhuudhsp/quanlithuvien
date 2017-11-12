@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation", "QLTHUVIEN\Presentation.csproj", "{8A9512E0-0ED3-483C-A475-D2AB707739DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation","Presentation\Presentation.csproj", "{8A9512E0-0ED3-483C-A475-D2AB707739DA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{36ACD172-9EE6-455E-8F5D-EBC8628E5AD4}"
 EndProject

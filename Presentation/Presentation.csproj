@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8A9512E0-0ED3-483C-A475-D2AB707739DA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QLTHUVIEN</RootNamespace>
+    <AssemblyName>QLTHUVIEN</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=10.0.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DevProgams\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dsMUONSACH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMUONSACH.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MUONSACH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MUONSACH.Designer.cs">
+      <DependentUpon>frm_MUONSACH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_BANDOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_BANDOC.Designer.cs">
+      <DependentUpon>frm_BANDOC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_DANGNHAP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_DANGNHAP.Designer.cs">
+      <DependentUpon>frm_DANGNHAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_NHAPSACH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_NHAPSACH.designer.cs">
+      <DependentUpon>frm_NHAPSACH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_THONGKE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_THONGKE.Designer.cs">
+      <DependentUpon>frm_THONGKE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_TRACUUSACH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_TRACUUSACH.Designer.cs">
+      <DependentUpon>frm_TRACUUSACH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MAIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MAIN.Designer.cs">
+      <DependentUpon>frm_MAIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="rptMUONSACH.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptMUONSACH.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="frm_MUONSACH.resx">
+      <DependentUpon>frm_MUONSACH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_BANDOC.resx">
+      <DependentUpon>frm_BANDOC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_DANGNHAP.resx">
+      <DependentUpon>frm_DANGNHAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_NHAPSACH.resx">
+      <DependentUpon>frm_NHAPSACH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_THONGKE.resx">
+      <DependentUpon>frm_THONGKE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_TRACUUSACH.resx">
+      <DependentUpon>frm_TRACUUSACH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MAIN.resx">
+      <DependentUpon>frm_MAIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptMUONSACH.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptMUONSACH.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="dsMUONSACH.xsc">
+      <DependentUpon>dsMUONSACH.xsd</DependentUpon>
+    </None>
+    <None Include="dsMUONSACH.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMUONSACH.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsMUONSACH.xss">
+      <DependentUpon>dsMUONSACH.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\htsoft-13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\NhaSach.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\TraCuu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\MuonTra.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DatabaseSQL\QLTHUVIEN.sql" />
+    <Content Include="DevProgams\DevComponents.DotNetBar2.dll" />
+    <None Include="Images\login.jpg" />
+    <None Include="Images\logout.jpg" />
+    <None Include="Images\Thoat.jpg" />
+    <None Include="Images\TKMuonSach.png" />
+    <None Include="Images\NhapSach.jpg" />
+    <None Include="Images\MuonTraSach.jpg" />
+    <None Include="Images\DoiMatKhau.jpg" />
+    <None Include="Images\DocGia.jpg" />
+    <None Include="Images\DangNhap.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
+      <Project>{d653a506-18c8-4843-9398-379e07c37eef}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{36acd172-9ee6-455e-8f5d-ebc8628e5ad4}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
