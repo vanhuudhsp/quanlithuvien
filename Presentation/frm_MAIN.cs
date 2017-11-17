@@ -47,7 +47,6 @@ namespace QLTHUVIEN
 
             
         }
-        
         private void logOut()
         {
             btnHome.Text = "Phần Mềm Quản Lý Thư Viện";
@@ -67,18 +66,18 @@ namespace QLTHUVIEN
 
         private void bt_Thong_Tin_Doc_Gia_Click(object sender, EventArgs e)
         {
-            TabItem tab = tabControl1.CreateTab("Bạn Đọc");
+            TabItem tab = tabMain.CreateTab("Bạn Đọc");
             frm_BANDOC  f_BANDOC = new frm_BANDOC();
             f_BANDOC.Dock = DockStyle.Fill;
             f_BANDOC.FormBorderStyle = FormBorderStyle.None;
             f_BANDOC.TopLevel = false;
             tab.AttachedControl.Controls.Add(f_BANDOC);
             f_BANDOC.Show();
-            tabControl1.SelectedTabIndex = tabControl1.Tabs.Count - 1;
+            tabMain.SelectedTabIndex = tabMain.Tabs.Count - 1;
         }
         private void buttonItem18_Click(object sender, EventArgs e)
         {
-            TabItem tab = tabControl1.CreateTab("Nhập sách");
+            TabItem tab = tabMain.CreateTab("Nhập sách");
             
             frm_NHAPSACH  f_NHAPSACH = new frm_NHAPSACH();
             f_NHAPSACH.Dock = DockStyle.Fill;
@@ -86,7 +85,7 @@ namespace QLTHUVIEN
             f_NHAPSACH.TopLevel = false;
             tab.AttachedControl.Controls.Add(f_NHAPSACH);
             f_NHAPSACH.Show();
-            tabControl1.SelectedTabIndex = tabControl1.Tabs.Count - 1;
+            tabMain.SelectedTabIndex = tabMain.Tabs.Count - 1;
         }
 
         private void bt_Thoa_Click(object sender, EventArgs e)
@@ -97,7 +96,7 @@ namespace QLTHUVIEN
         private void bt_Tra_Cuu_Click(object sender, EventArgs e)
         {
 
-            TabItem tab = tabControl1.CreateTab("Tra cứu sách");
+            TabItem tab = tabMain.CreateTab("Tra cứu sách");
 
             frm_TRACUUSACH  f_TRACUUSACH = new frm_TRACUUSACH();
             f_TRACUUSACH.Dock = DockStyle.Fill;
@@ -105,12 +104,12 @@ namespace QLTHUVIEN
             f_TRACUUSACH.TopLevel = false;
             tab.AttachedControl.Controls.Add(f_TRACUUSACH);
             f_TRACUUSACH.Show();
-            tabControl1.SelectedTabIndex = tabControl1.Tabs.Count - 1;
+            tabMain.SelectedTabIndex = tabMain.Tabs.Count - 1;
         }
 
         private void buttonItem15_Click(object sender, EventArgs e)
         {
-            TabItem tab = tabControl1.CreateTab("Tra cứu sách");
+            TabItem tab = tabMain.CreateTab("Tra cứu sách");
 
             frm_MUONSACH  f_MUONSACH = new frm_MUONSACH();
             f_MUONSACH.Dock = DockStyle.Fill;
@@ -118,12 +117,12 @@ namespace QLTHUVIEN
             f_MUONSACH.TopLevel = false;
             tab.AttachedControl.Controls.Add(f_MUONSACH);
             f_MUONSACH.Show();
-            tabControl1.SelectedTabIndex = tabControl1.Tabs.Count - 1;
+            tabMain.SelectedTabIndex = tabMain.Tabs.Count - 1;
         }
 
         private void btTK_MuonSach_Click(object sender, EventArgs e)
         {
-            TabItem tab = tabControl1.CreateTab("Thống Kê Mượn Sách");
+            TabItem tab = tabMain.CreateTab("Thống Kê Mượn Sách");
 
             frm_THONGKE  f_THONGKE = new frm_THONGKE();
             f_THONGKE.Dock = DockStyle.Fill;
@@ -131,7 +130,7 @@ namespace QLTHUVIEN
             f_THONGKE.TopLevel = false;
             tab.AttachedControl.Controls.Add(f_THONGKE);
             f_THONGKE.Show();
-            tabControl1.SelectedTabIndex = tabControl1.Tabs.Count - 1;
+            tabMain.SelectedTabIndex = tabMain.Tabs.Count - 1;
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)

@@ -18,12 +18,7 @@ namespace QLTHUVIEN
     public partial class frm_DANGNHAP : Form
     {
 
-        public frm_MAIN parentForm;
-
-        public frm_MAIN setParentForm
-        {
-            set { parentForm = value; }
-        }
+       
 
 
         public frm_DANGNHAP()
@@ -43,7 +38,13 @@ namespace QLTHUVIEN
             
         }
 
-        
+        public frm_MAIN parentForm;
+
+        public frm_MAIN setParentForm
+        {
+            set { parentForm = value; }
+        }
+
         private void bt_Dang_Nhap_Click(object sender, EventArgs e)
         {
             XL_BANG.Chuoi_lien_ket = "Data Source=.;Initial Catalog=QLTHUVIEN;Integrated Security=True";
