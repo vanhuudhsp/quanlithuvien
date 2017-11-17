@@ -226,6 +226,7 @@
     <Content Include="DevProgams\CrystalDecisions.Shared.dll" />
     <Content Include="DevProgams\CrystalDecisions.Windows.Forms.dll" />
     <Content Include="DevProgams\DevComponents.DotNetBar2.dll" />
+    <Content Include="DevProgams\FlashControlV71.dll" />
     <None Include="Images\login.jpg" />
     <None Include="Images\logout.jpg" />
     <None Include="Images\Thoat.jpg" />
